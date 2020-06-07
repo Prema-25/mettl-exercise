@@ -1,0 +1,34 @@
+
+ Cyberster / Wipro-Training-Day-10
+Code Issues 0 Pull requests 0 Projects 0 Actions Wiki Security 0 Pulse Community
+Wipro-Training-Day-10/src/com/w3epic/wiprotraining/isPalindromeString.java
+@Cyberster Cyberster Initial commit
+4ba3c04 on Aug 14, 2018
+26 lines (18 sloc)  591 Bytes
+ 
+package com.w3epic.wiprotraining;
+
+public class isPalindromeString {
+	
+	public static int getIsPalindromeString(String input1) {
+		input1 = input1.toLowerCase();
+		int digitCount = input1.length();
+		boolean isPalindrome = true;
+		
+		int range = digitCount / 2;
+		if (digitCount % 2 == 0) range--;
+		
+		for (int i = 0; i <= range; i++) {
+			if (input1.charAt(i) != input1.charAt(digitCount - i - 1)) isPalindrome = false;
+		}
+		
+		if (isPalindrome == true) return 2;
+		else return 1;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(getIsPalindromeString("madam"));
+
+	}
+
+}
