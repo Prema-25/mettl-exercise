@@ -1,0 +1,55 @@
+
+
+public class SumOfEvenDigitsProgram {
+
+  public static int findEvenDigitSum(int number) {
+
+    // declare variables
+    int lastDigit = 0;
+    int evenDigitSum = 0;
+
+    // loop to repeat the process
+    while(number!=0) {
+
+       // find last digit
+       lastDigit = number%10;
+
+       // check last digit even?
+       if(lastDigit % 2 == 0) 
+           // add it to sum
+           evenDigitSum += lastDigit;
+       }
+
+       // remove last digit of number
+       number = number / 10;
+    }
+
+    // return sum value
+    return evenDigitSum;
+  }
+
+  public static void main(String[] args) {
+
+     // declare variables
+     int number = 0;
+     int sumOfEvenDigits = 0;
+
+     // create Scanner class object 
+     // for reading the values
+     Scanner scan =  new Scanner(System.in);
+
+     // read inputs
+     System.out.print("Enter an integer number:: ");
+     number = scan.nextInt();
+
+     // find sum of digits of number
+     sumOfEvenDigits = findEvenDigitSum(number);
+
+     // display result
+     System.out.println("The sum of even digits of"+
+       " the number "+number+" = "+ sumOfEvenDigits);
+
+     // close Scanner class object
+     scan.close();
+  }
+}
